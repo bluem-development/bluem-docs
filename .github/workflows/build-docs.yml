@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  INSTANCE: 'Bluem documentation'
+  INSTANCE: 'Bluem documentation/bd'
   ARTIFACT: 'webHelpBD2-all.zip'
   DOCKER_VERSION: '241.16003'
 
