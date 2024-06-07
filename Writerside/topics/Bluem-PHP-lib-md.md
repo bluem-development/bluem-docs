@@ -1,4 +1,4 @@
-# Bluem PHP Library
+# Bluem PHP library
 
 **Bluem-php for Payment, Mandates, iDIN & IBAN-Name check**
 
