@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  INSTANCE: 'Writerside/hi'
+  INSTANCE: 'Bluem documentation'
   ARTIFACT: 'webHelpBD2-all.zip'
   DOCKER_VERSION: '241.16003'
 
@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build docs using Writerside Docker builder
+      - name: Build docs using Bluem Docker builder
         uses: JetBrains/writerside-github-action@v4
         with:
           instance: ${{ env.INSTANCE }}
