@@ -4,9 +4,9 @@
 
 <instance-profile id="bd"
                  name="Bluem documentation"
-                 start-page="starter.md">
+                 start-page="index.md">
 
-    <toc-element topic="starter.md">
-        <toc-element topic="Empty-MD-Topic.md"/>
+    <toc-element topic="index.md">
+        <toc-element topic="BluemPHP.md"/>
     </toc-element>
 </instance-profile>
