@@ -1,8 +1,7 @@
 # Bluem Plugins and libraries
 ![Bluem](https://bluem.nl/img/BluemAboutIcon.svg)
 
-# Our products
-
+Learn more about our products:
 
 - [Bluem PHP](BluemPHP.md): The plug-and-play PHP library for any use case.
 ## Add new topics

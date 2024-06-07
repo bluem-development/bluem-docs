@@ -109,7 +109,8 @@ Allowing the verification if the current IP is based in the Netherlands utilizin
 
 ```php
 $bluem->VerifyIPIsNetherlands();
-// returns bool true if NL or error, returns false if no error and other country.
+// returns bool true if NL or error, returns false if no error 
+// and other country.
 ```
 *This feature can be used to determine whether to use iDIN identity checking in any application, as this supports only Dutch banks.*
 
@@ -176,26 +177,33 @@ Then you can retrieve an object to utilize all functions as below. It is suggest
 ```php
 $config = new Stdclass();
 
-// Fill in the string 'prod', 'test' or 'acc' for production, test or acceptance environment, respectively.
+// Fill in the string 'prod', 'test' or 'acc' for production, test or 
+// acceptance environment, respectively.
 $config->environment = ...
 v
-// The sender ID, issued by Bluem. Starts with an S, followed by a number.
+// The sender ID, issued by Bluem. Starts with an S, followed by a 
+// number.
 $config->senderID = ... 
 
-// The access token to communicate with Bluem, for the test environment.
+// The access token to communicate with Bluem, for the test env.
 $config->test_accessToken = ... 
 
-// The access token to communicate with Bluem, for the production environment.
+// The access token to communicate with Bluem, for the production env.
 $config->production_accessToken = ... 
 
-// the merchant ID (for eMandates), to be found on the contract you have with the bank for receiving direct debit mandates.
+// the merchant ID (for eMandates), to be found on the contract you 
+// have with the bank for receiving direct debit mandates.
 $config->merchantID = ...
 
-// The slug of the 'Thank You' page to which should be referred after completing process. If your Order ID is processed in the URL it will be filled in for you.
+// The slug of the 'Thank You' page to which should be referred after 
+// completing process. If your Order ID is processed in the URL it 
+// will be filled in for you.
 $config->thanksPage = ...
 // Not applicable for IBAN-Name check
 
-// What status would you like to get back for a TEST transaction or status request? Possible values: none, success, cancelled, expired, failure, open, pending
+// What status would you like to get back for a TEST transaction or 
+// status request? Possible values: none, success, cancelled, expired, 
+// failure, open, pending
 $config->expectedReturnStatus = ...
 // Not applicable for IBAN-Name check
 
@@ -249,7 +257,9 @@ Parameter has to be a valid BIC code of a supported bank. An invalid BIC code wi
 Illustrated here is that a list of BICs per context can also be retrieved programmatically:
 
 ```php
-$MandatesBICs = $bluem->retrieveBICsForContext("Mandates"); // also specific to localInstrumentCode, see notes.
+$MandatesBICs = $bluem->retrieveBICsForContext("Mandates"); 
+// ^ also specific to localInstrumentCode, see notes.
+
 $PaymentsBICs = $bluem->retrieveBICsForContext("Payments");
 $IdentityBICs = $bluem->retrieveBICsForContext("Identity");
 ```
@@ -383,8 +393,12 @@ $debtorBankID = $webhook->getDebtorBankID();
 ```php
 $mandateID = $webhook->getMandateID();
 $statusDateTime = $webhook->getStatusDateTime();
-$originalReport = $webhook->getOriginalReport(); // note: returns raw XML cdata object that still needs to be parsed.
-$acceptanceReport = $webhook->getAcceptanceReportArray(); // note: returns array with a lot of values that are of use.
+
+$originalReport = $webhook->getOriginalReport(); 
+// note: returns raw XML cdata object that still needs to be parsed.
+
+$acceptanceReport = $webhook->getAcceptanceReportArray(); 
+// note: returns array with a lot of values that are of use.
 ```
 
 **Identity specific functions:**
@@ -429,8 +443,10 @@ The Payments service is like the eMandates service, but utilises other parameter
 $description = "Test payment"; // a concise description with possible references to order name and such.
 $amount = 100.00;	 // as a float
 $currency = "EUR"; // if set to null, will default to EUR as string
-$debtorReference = "1234023"; 
-$dueDateTime = null; // Set it automatically a day in advance. If you want to set it, use a datetime string in "YYYY-MM-DD H:i:s" format
+$debtorReference = "1234023";
+ 
+$dueDateTime = null; // Set it automatically a day in advance. 
+// If you want to set it, use a datetime string in "YYYY-MM-DD H:i:s" format
 
 $entranceCode = $bluem->CreateEntranceCode();
 
@@ -469,13 +485,18 @@ if ($statusresponse->ReceivedResponse()) {
             // do something when the payment is successful directly
         case 'Processing':
         case 'Pending':
-            // do something when the request is still processing (for example tell the user to come back later to this page)
+            // do something when the request is still processing 
+            // (for example tell the user to come back later to 
+            // this page)
             break;
         case 'Cancelled':
-            // do something when the request has been canceled by the user.
+            // do something when the request has been canceled 
+            // by the user.
             break;
         case 'Open':
-            // do something when the request has not yet been completed by the user, redirecting to the transactionURL again.
+            // do something when the request has not yet been 
+            // completed by the user, redirecting to the 
+            // transactionURL again.
             break;
         case 'Expired':
             // do something when the request has expired
@@ -484,7 +505,6 @@ if ($statusresponse->ReceivedResponse()) {
             // unexpected status returned, show an error
             break;
     }
-
 }
 ```
 
@@ -688,7 +708,8 @@ The `$returnURL` is vital, as Bluem will redirect the user to that location afte
 $description = "Test identity"; // description shown to customer
 $debtorReference = "1234"; // client reference/number
 $returnURL = "https://yourdomain.com/integration/identity.php?action=callback"; 
-// provide a link here to the callback function; either in this script or another script.
+// provide a link here to the callback function; either in this script 
+// or another script.
 
 $request = $bluem->CreateIdentityRequest(
 	["BirthDateRequest", "AddressRequest"],
@@ -753,10 +774,12 @@ if ($statusResponse->ReceivedResponse()) {
         case 'Success':
             // handle a success callback
 
-            // retrieve a report that contains the information based on the request type:
+            // retrieve a report that contains the information based 
+            // on the request type:
             $identityReport = $statusResponse->GetIdentityReport();
 
-            // this contains an object with key-value pairs of relevant data from the bank:
+            // this contains an object with key-value pairs of 
+            // relevant data from the bank:
             /**
              * example contents:
              *  "DateTime": string(24) "2020-10-16T15:30:45.803Z"
@@ -773,19 +796,24 @@ if ($statusResponse->ReceivedResponse()) {
              *  */
             // store information and process it.
 
-            // You can for example use the BirthDateResponse to determine the age of the user and act accordingly.
+            // You can for example use the BirthDateResponse to 
+            // determine the age of the user and act accordingly.
 
 
             break;
         case 'Processing':
         case 'Pending':
-            // do something when the request is still processing (for example tell the user to come back later to this page)
+            // do something when the request is still processing 
+            // (for example tell the user to come back later to this page)
             break;
         case 'Cancelled':
-            // do something when the request has been canceled by the user.
+            // do something when the request has been canceled by the
+            // user.
             break;
         case 'Open':
-            // do something when the request has not yet been completed by the user, redirecting to the transactionURL again.
+            // do something when the request has not yet been 
+            // completed by the user, redirecting to the 
+            // transactionURL again.
             break;
         case 'Expired':
             // do something when the request has expired

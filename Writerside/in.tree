@@ -7,5 +7,5 @@
                  start-page="starter.md">
 
     <toc-element topic="starter.md"/>
-    <toc-element topic="Bluem-PHP-lib-md.md"/>
+    <toc-element topic="BluemPHP.md"/>
 </instance-profile>
