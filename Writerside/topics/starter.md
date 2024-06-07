@@ -4,5 +4,4 @@
 Learn more about our products:
 
 - [Bluem PHP](BluemPHP.md): The plug-and-play PHP library for any use case.
-- [WordPress & WooCommerce (technical)](WordPress-WooCommerce.md)
-- [WordPress & WooCommerce manual]
+- [Bluem WordPress & WooCommerce plug-in](WordPress-WooCommerce.md)

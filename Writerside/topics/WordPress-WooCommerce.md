@@ -1,4 +1,4 @@
-# Bluem-WordPress and WooCommerce (technical details)
+# Plug-in Technical details
 A plug-in for Payment, Mandates, iDIN & IBAN-Name check
 
 This is the developer repository and notes for the bluem WordPress and WooCommerce plug-in.

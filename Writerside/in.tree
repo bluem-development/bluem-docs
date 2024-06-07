@@ -7,8 +7,12 @@
                  start-page="starter.md">
 
     <toc-element topic="starter.md"/>
-    <toc-element topic="WordPress-WooCommerce.md">
-        <toc-element topic="Bluem voor WordPress en WooCommerce - Handleiding.md"/>
+    <toc-element topic="WordPress-Woo.md">
+        <toc-element topic="wordpress-woo-handleiding.md" />
+        <toc-element topic="Belangrijke-versie-updates.md"/>
+        <toc-element topic="WordPress-WooCommerce.md"/>
     </toc-element>
-    <toc-element topic="BluemPHP.md"/>
+    <toc-element topic="BluemPHP.md">
+        <toc-element topic="Integrating-the-library-in-your-own-application.md"/>
+    </toc-element>
 </instance-profile>
