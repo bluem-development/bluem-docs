@@ -58,13 +58,9 @@ Starting this release, **PHP 8.1** is the minimum required version for this libr
 - Refer to the `composer.json` requirements for any other dependencies
 
 ## Getting started
-Install the library through [Composer](https://getcomposer.org). Run Composer to install this library and dependencies from your project folder.
+Check out our tutorial on [getting started with the library here](tutorial-configuration.md).
 
-```bash
-composer require bluem-development/bluem-php
-```
-
-Refer to the [examples](https://github.com/bluem-development/bluem-php/tree/master/examples) for a full example implementation that you can base your own integration on.
+You can also refer to the [examples](https://github.com/bluem-development/bluem-php/tree/master/examples) for a full example implementation that you can base your own integration on.
 
 Please contact us if you have any questions regarding the examples or the implementation of the library in your project.
 
