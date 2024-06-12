@@ -163,7 +163,8 @@ This method can be used when creating iDIN and when creating iDEAL requests; you
 
 ## Using different Payment transaction methods
 
-**Important note: ensure you have the right BrandID set up for specific payment methods. Refer to your account manager to retrieve a list of the specific BrandIDs per payment method**
+**Important note: ensure you have the right BrandID set up for specific payment methods. 
+Refer to your account manager to retrieve a list of the specific BrandIDs per payment method**
 
 You can allow the PayPal and Creditcard payment methods by selecting these within the request object before sending it.
 
@@ -212,11 +213,17 @@ $request->setPaymentMethodToIDEAL(...);
 $request->setPaymentMethodToPayPal(...);
 $request->setPaymentMethodToCreditCard(...);
 $request->setPaymentMethodToSofort();
-$request->setPaymentMethodToSofortDigitalServices();
 $request->setPaymentMethodToCarteBancaire();
+```
+
+From version 2.3.3 of this plug-in you can utilize also:
+```php
+$request->setPaymentMethodToSofortDigitalServices();
 $request->setPaymentMethodToBancontact();
 $request->setPaymentMethodToGiropay();
 ```
+
+
 
 Required information per payment method:
 
@@ -230,7 +237,5 @@ Required information per payment method:
 | Carte Bancaire          | None                                                                                                                                     |
 | Bancontact              | None                                                                                                                                     |
 | Giropay                 | None                                                                                                                                     |
-
-These methods will throw an exception if required information is missing.
 
 Once the request executes, the link to the transaction will send you to the Bluem Portal with the corresponding interface and flow.
