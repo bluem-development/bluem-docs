@@ -1,4 +1,4 @@
-# Bluem Woo Handleiding (NL)
+# 📚 Bluem Woo Handleiding (NL)
 
 > Heb je tijdens of na het lezen van deze handleiding vragen of opmerkingen?
 Laat het de plug-in developers weten via email op [pluginsupport@bluem.nl](mailto:pluginsupport@bluem.nl).

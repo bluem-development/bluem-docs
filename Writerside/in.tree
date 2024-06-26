@@ -9,6 +9,7 @@
     <toc-element topic="index.md"/>
     <toc-element topic="News-announcements.md"/>
     <toc-element topic="WordPress-Woo.md">
+        <toc-element topic="Plug-in-updates.md"/>
         <toc-element topic="wordpress-woo-handleiding.md" />
         <toc-element topic="Belangrijke-versie-updates.md"/>
         <toc-element topic="WordPress-WooCommerce.md"/>
